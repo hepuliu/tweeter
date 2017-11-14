@@ -1,5 +1,4 @@
 /* Input Tweet Form Styles */
-
 .new-tweet {
   border: solid #c0bac4 1px;
   border-radius: 5px;
@@ -11,7 +10,12 @@
   
 }
 
+.new-tweet form {
+  width: 100%;
+  padding: 0px 10px;
+}
 
+/* form header text style */
 .new-tweet h2 {
   border-bottom: solid black 1px;
   width: 95%;
@@ -19,17 +23,14 @@
   margin: 10px 10px;
 }
 
+/* form counter  style */
 .new-tweet .counter {
   float: right;
   line-height: 24px;
   color: #2d2e4a;
 }
 
-.new-tweet form {
-  width: 100%;
-  padding: 0px 10px;
-}
-
+/* form textarea  style */
 .new-tweet form textarea {
   width: 100%;
   padding: 10px 10px;
