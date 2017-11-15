@@ -1,4 +1,6 @@
-/* Tweet Section Styles */
+/* Tweet Section Styles 
+ * Color: Blue #e8fdff; Icon Blue: #51c2ca; Green: #244751; BG Gray: #eee; Dark Gray: #c0bac4;
+ */
 
 /* tweets section box */
 .tweets {
@@ -58,18 +60,26 @@
   border-radius: 0px 0px 5px 5px;
   margin: 0;
   padding: 0;
+  padding-right: 20px;
+  padding-left: 20px;
   height: 30px;
   border-top: solid #eee 1px;
+  width: 100%;
 }
 
-/* date */
+/* post date */
 .tweets footer span {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0;
   padding-top: 5px;
 }
 
 
+/* icons - (hover function) */
+.tweets footer span.icons {
+  float: right;
+  color: #51c2ca;
+}
 
 
 
