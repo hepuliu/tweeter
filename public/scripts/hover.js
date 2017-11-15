@@ -1,4 +1,6 @@
-/* Hover Function */
+/* Hover Function 
+ * Add icons when hover on the tweets section
+ */
 
 $(document).ready(function(){
   // set var to contain html with 3 icons
@@ -12,9 +14,9 @@ $(document).ready(function(){
 
   // hover function mouseIn and mouseOut
   $('article.tweets').hover(function(){
-    $(".postdate").after(icons);
+    $(this).find(".postdate").after(icons);
   }, function(){
-    $(".icons").remove();
+    $(this).find(".icons").remove();
   });
 });
 
