@@ -5,7 +5,7 @@ $(document).ready(function(){
   $('.counter').text(CHAR_LIMIT);
   
   // counter function
-  $('textarea').on("keyup", function(event){
+  $('textarea').on("keyup", function(){
     let remaining = CHAR_LIMIT - $(this).val().length;
     const counterEl = $(this).siblings('.counter');
     

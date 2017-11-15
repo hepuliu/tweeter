@@ -1,4 +1,6 @@
 /* Input Tweet Form Styles */
+
+/* New tweet section box */
 .new-tweet {
   border: solid #c0bac4 1px;
   border-radius: 5px;
@@ -7,15 +9,9 @@
   background-color: #eee;
   padding-bottom: 5px;
   color: #2d2e4a;
-  
 }
 
-.new-tweet form {
-  width: 100%;
-  padding: 0px 10px;
-}
-
-/* form header text style */
+/* form header text */
 .new-tweet h2 {
   border-bottom: solid black 1px;
   width: 95%;
@@ -23,20 +19,27 @@
   margin: 10px 10px;
 }
 
-/* form counter  style */
+/* tweet form box */
+.new-tweet form {
+  width: 100%;
+  padding: 0px 10px;
+}
+
+/* tweet char counter */
 .new-tweet .counter {
   float: right;
   line-height: 24px;
   color: #2d2e4a;
 }
 
-/* form textarea  style */
+/* tweet input */
 .new-tweet form textarea {
   width: 100%;
   padding: 10px 10px;
   margin: 0;
 }
 
+/* tweet submimt button*/
 .new-tweet form input {
   color: #2d2e4a;
 }

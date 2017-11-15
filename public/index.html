@@ -18,6 +18,9 @@
 
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
     
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -39,6 +42,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- new tweets form -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
@@ -47,6 +51,27 @@
           <span class="counter"></span>
         </form>
       </section>
+      
+      <!-- Page-specific (main) content here -->
+      <article class="tweets">
+          <header>  
+            <img class="profile" src="https://timedotcom.files.wordpress.com/2017/07/1f92a-320px.png">
+            <h2>username</h2>
+            <span>@userID</span>
+          </header>
+          
+          <p>Little tweet here Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          
+          <footer>
+          <span>10 days ago</span> 
+          </footer>
+      </article>
+   
     </main>
 
   </body>
