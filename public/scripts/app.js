@@ -54,36 +54,25 @@ var data = [
 
 // function to display time stamp for tweet post
 function timeDifference(current, previous) {
+    let msPerMinute = 60 * 1000;
+    let msPerHour = msPerMinute * 60;
+    let msPerDay = msPerHour * 24;
+    let msPerMonth = msPerDay * 30;
+    let msPerYear = msPerDay * 365;
 
-    var msPerMinute = 60 * 1000;
-    var msPerHour = msPerMinute * 60;
-    var msPerDay = msPerHour * 24;
-    var msPerMonth = msPerDay * 30;
-    var msPerYear = msPerDay * 365;
-
-    var elapsed = current - previous;
+    let elapsed = current - previous;
 
     if (elapsed < msPerMinute) {
          return Math.round(elapsed/1000) + ' seconds ago';   
-    }
-
-    else if (elapsed < msPerHour) {
+    } else if (elapsed < msPerHour) {
          return Math.round(elapsed/msPerMinute) + ' minutes ago';   
-    }
-
-    else if (elapsed < msPerDay ) {
+    } else if (elapsed < msPerDay ) {
          return Math.round(elapsed/msPerHour ) + ' hours ago';   
-    }
-
-    else if (elapsed < msPerMonth) {
+    } else if (elapsed < msPerMonth) {
         return Math.round(elapsed/msPerDay) + ' days ago';   
-    }
-
-    else if (elapsed < msPerYear) {
+    } else if (elapsed < msPerYear) {
         return Math.round(elapsed/msPerMonth) + ' months ago';   
-    }
-
-    else {
+    } else {
         return Math.round(elapsed/msPerYear ) + ' years ago';   
     }
 }
@@ -94,6 +83,14 @@ function renderTweets(tweets) {
     let tweetElement = createTweetElement(tweet);
     tweetElement.appendTo($('.container'));
   }
+}
+
+// cross-site escepe function
+
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
 
 // function to render tweet elements to html 
@@ -120,7 +117,22 @@ function createTweetElement(tweet) {
   return $tweet;
 }
 
-
 $(document).ready(function(){
   renderTweets(data);
+
+// new tweet element to be posted Asynchronously
+  $("form input").click(function(event) {
+    event.preventDefault(); 
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(this).serialize(),
+      success: function(){
+        console.log("ok"); 
+      },
+      error: function() {
+        alert ('error!');
+      }
+    })
+  });
 });
