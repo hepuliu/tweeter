@@ -76,13 +76,13 @@ $(document).ready(function(){
     event.preventDefault(); 
     // validate input text
     let len = $('textarea').val().length;
-    if ( len < 1 && len > 0){
+    if ( len < 140 && len > 0){
       $.ajax({
         url: '/tweets',
         type: 'POST',
         data: $(this).serialize(),
         success: function(){
-          console.log('ok');
+          loadTweets();
         }
       });
     } else {
@@ -94,7 +94,7 @@ $(document).ready(function(){
     $(".new-tweet form textarea").on('click', function(event) {
       $('.new-tweet .err').fadeOut('slow'); 
     });
-    
+
 // function to get data from the /tweet page
   function loadTweets(){
     $.ajax({
