@@ -70,28 +70,42 @@ function createTweetElement(tweet) {
 }
 
 $(document).ready(function(){
+
+  // submission and fetching tweet with AJAX
   $(".new-tweet form").on('submit', function(event) {
     event.preventDefault(); 
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      data: $(this).serialize(),
-      success: function(){
-        console.log('ok');
-      }
-    })
+    // validate input text
+    let len = $('textarea').val().length;
+    if ( len < 1 && len > 0){
+      $.ajax({
+        url: '/tweets',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(){
+          console.log('ok');
+        }
+      });
+    } else {
+      $('.new-tweet').append('<span class="' + 'err' + '">! Please Enter between 1 to 140 characters! </span>');
+    } 
   });
 
+    // remove submission error message when cursor is back to textarea
+    $(".new-tweet form textarea").on('click', function(event) {
+      $('.new-tweet .err').fadeOut('slow'); 
+    });
+    
 // function to get data from the /tweet page
   function loadTweets(){
     $.ajax({
       url: '/tweets',
       type: 'GET',
       success: function(data){
-        renderTweets(data);
+        renderTweets(data);  
       }
     });
-  };
+  }
 
   loadTweets();
+
 });

@@ -45,3 +45,14 @@
 .new-tweet form input {
   color: #2d2e4a;
 }
+
+/* error message */
+.new-tweet .err {
+  color: red;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  background-color: yellow;
+}
+
+
