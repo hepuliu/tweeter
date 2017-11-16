@@ -12,11 +12,19 @@ $(document).ready(function(){
     </span>
   `;
 
-  // hover function mouseIn and mouseOut
+  // hover function to show icons on tweets
   $('article.tweets').hover(function(){
     $(this).find(".postdate").after(icons);
   }, function(){
     $(this).find(".icons").remove();
   });
+
+  
+  // hover function to toggle tweet input form by clikcing compose
+  $('#nav-bar .compose').on('click', function(event) {
+    $('.new-tweet').toggle();
+    $('.container textarea').focus();
+  })
+  
 });
 
