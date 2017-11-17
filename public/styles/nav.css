@@ -21,11 +21,9 @@
   float: left;
   font-size: 2em;
   line-height: 80px;
-  
 }
 
 /* compose button */
-
 #nav-bar .compose {
   position: absolute;
   right: 2%;
@@ -36,10 +34,8 @@
   border: solid 1px #eee;
 }
 
-
-
+/* compose hover effect */
 #nav-bar .compose:hover { 
   background-color: #51c2ca;
   border: solid 2px #eee;
-
 }

@@ -64,11 +64,17 @@ function createTweetElement(tweet) {
   let $span = $('<span>').html(`${escape(tweet.user.handle)}`);
   $span.appendTo($header);
   $header.appendTo($tweet);
+  
+  // create tweet body
   var $p = $('<p>').text(tweet.content.text);
   $p.appendTo($tweet);
+
+  // create tweet footer
   var $footer = $('<footer>');
   var $footer_span = $('<span>').addClass('postdate').text(timeDifference(new Date(), tweet.created_at));
+  var $icon_span = $('<span>').addClass('icons').append('<i class="fa fa-flag"></i><i class="fa fa-retweet"></i><i class="fa fa-heart"></i>');
   $footer_span.appendTo($footer);
+  $footer_span.after($icon_span);
   $footer.appendTo($tweet);
   return $tweet;
 }

@@ -75,13 +75,14 @@
   padding-top: 5px;
 }
 
-
-/* icons - (hover function) */
+/* icons to hide initially */
 .tweets footer span.icons {
   float: right;
-  color: #51c2ca;
+  color: white;
 }
 
-
-
+/* icons - hover effect */
+.tweets:hover > footer span.icons {
+  color: #51c2ca;
+}
 

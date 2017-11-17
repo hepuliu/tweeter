@@ -1,5 +1,6 @@
 "use strict";
 
+// connect to mongodb server
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
@@ -12,6 +13,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     mongodb = db;
 });
 
+// export callback function to be passed-on to data-helpers
 module.exports = callback => {
     callback(mongodb);
 }
