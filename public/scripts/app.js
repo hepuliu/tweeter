@@ -37,8 +37,12 @@ function renderTweets(tweets) {
   }
 }
 
-// cross-site escepe function
+// function to clear tweets
+function clearTweets() {
+  $('.tweets').remove();
+}
 
+// cross-site escepe function
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -90,17 +94,18 @@ $(document).ready(function(){
     } 
   });
 
-    // remove submission error message when cursor is back to textarea
-    $(".new-tweet form textarea").on('click', function(event) {
-      $('.new-tweet .err').fadeOut('slow'); 
-    });
+  // remove submission error message when cursor is back to textarea
+  $(".new-tweet form textarea").on('click', function(event) {
+    $('.new-tweet .err').fadeOut('slow'); 
+  });
 
-// function to get data from the /tweet page
+  // function to get data from the /tweet page
   function loadTweets(){
     $.ajax({
       url: '/tweets',
       type: 'GET',
       success: function(data){
+        clearTweets();
         renderTweets(data);  
       }
     });
