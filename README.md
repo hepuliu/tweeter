@@ -19,8 +19,8 @@ This project is a single page app built with HTML, CSS, JS, jQuery and AJAX on t
 - mongodb": "^2.2.33"
 
 ### Screenshots
-!["main"](https://raw.githubusercontent.com/hepuliu/tweeter/master/docs/main.png"main")
+!["main"](https://raw.githubusercontent.com/hepuliu/tweeter/master/docs/main.png)
 
-!["toggle"](https://raw.githubusercontent.com/hepuliu/tweeter/master/docs/toggle.png"toggle")
+!["toggle"](https://raw.githubusercontent.com/hepuliu/tweeter/master/docs/toggle.png)
 
-!["error"](https://raw.githubusercontent.com/hepuliu/tweeter/master/docs/error.png"error")
+!["error"](https://raw.githubusercontent.com/hepuliu/tweeter/master/docs/error.png)
